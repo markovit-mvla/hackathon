@@ -16,17 +16,17 @@ contract Ballot {
 
     event Vote(address from, address to, uint vote);
 
-    constructor(bool voted, address delegate, uint vote) {
-        voter = Voter(voted, delegate, vote);
+    constructor(bool voted, address delegate, uint _vote) {
+        voter = Voter(voted, delegate, _vote);
     } 
 
-    function vote(address _to, uint _vote) public returns (bool success) {
+    function vote(address _to, uint _vote) public {
         require(citizenshipStatus[msg.sender] == true, "Must be a citizen.");
         require(votesToUse[msg.sender] == 1, "Cannot vote for multiple candidates.");
 
         votesFor[_to] += _vote;
         votesToUse[msg.sender] -= _vote;
 
-        emit Voter(msg.sender, _to, _vote);
+        emit Vote(msg.sender, _to, _vote);
     }
 }
