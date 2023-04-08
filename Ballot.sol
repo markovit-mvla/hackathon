@@ -39,17 +39,23 @@ contract Ballot {
         }
     }
 
+    /* Audit trail */
+    event GiveRightToVote(address voter);
+
     /* Website will scan ID and give the voter right to access */
-    function giveRightToVote(address voter) external {
+    function giveRightToVote(address _voter) public {
         // Need to use AI to scan and make sure our voter is a citizen
         // Once we know they are a citizen, we can approve it
         require(
-            !voters[voter].voted,
+            !voters[_voter].voted,
             "Only one vote allowed"
         );
-        require(voters[voter].weight == 0);
-        voters[voter].weight = 1;
+        require(voters[_voter].weight == 0);
+        emit GiveRightToVote(_voter);
+        voters[_voter].weight = 1;
     } 
+
+    event Delegate(address to);
 
     /* Delegate votes */
     function delegate(address _to) external {
@@ -73,6 +79,8 @@ contract Ballot {
         } else {
             delegate_.weight += sender.weight;
         }
+
+        emit Delegate(_to);
     }
 
     event Vote(uint proposal);
