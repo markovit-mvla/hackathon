@@ -19,6 +19,7 @@ contract Ballot {
     }
 
     address public chairperson;
+    string public message;
 
     /* HashMap - each possible address will have a Voter */
     mapping (address => Voter) public voters;
@@ -27,7 +28,7 @@ contract Ballot {
     Proposal[] public proposals;
 
     /* Creates new ballot, selects proposal name */
-    constructor(bytes32[] memory proposalNames) {
+    constructor(bytes32[] memory proposalNames, string memory initMessage) {
         chairperson = msg.sender;
         voters[chairperson].weight = 1;
 
@@ -37,10 +38,12 @@ contract Ballot {
                 voteCount: 0
             }));
         }
+
+        message = initMessage;
     }
 
     /* Audit trail */
-    event GiveRightToVote(address voter);
+    event GaveRight(address voter);
 
     /* Website will scan ID and give the voter right to access */
     function giveRightToVote(address _voter) public {
@@ -51,11 +54,11 @@ contract Ballot {
             "Only one vote allowed"
         );
         require(voters[_voter].weight == 0);
-        emit GiveRightToVote(_voter);
+        emit GaveRight(_voter);
         voters[_voter].weight = 1;
     } 
 
-    event Delegate(address to);
+    event Delegated(address to);
 
     /* Delegate votes */
     function delegate(address _to) external {
@@ -80,10 +83,10 @@ contract Ballot {
             delegate_.weight += sender.weight;
         }
 
-        emit Delegate(_to);
+        emit Delegated(_to);
     }
 
-    event Vote(uint proposal);
+    event Voted(uint proposal);
 
     /* Give vote to proposal */
     function vote(uint _proposal) external {
@@ -93,7 +96,7 @@ contract Ballot {
         sender.voted = true;
         sender.vote = _proposal;
         proposals[_proposal].voteCount += sender.weight;
-        emit Vote(_proposal);
+        emit Voted(_proposal);
     }
 
     function winningProposal() public view
@@ -112,6 +115,14 @@ contract Ballot {
             returns (bytes32 winnerName_)
     {
         winnerName_ = proposals[winningProposal()].name;
+    }
+
+    event UpdatedMessages(string oldStr, string newStr);
+
+    function update(string memory newMessage) public {
+        string memory oldMsg = message;
+        message = newMessage;
+        emit UpdatedMessages(oldMsg, newMessage);
     }
 
     /*

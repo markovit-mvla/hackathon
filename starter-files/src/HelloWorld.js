@@ -6,32 +6,44 @@ import {
   updateMessage,
   loadCurrentMessage,
   getCurrentWalletConnected,
+  connectToEthChain,
 } from "./util/interact.js";
 
 import alchemylogo from "./alchemylogo.svg";
 
 const HelloWorld = () => {
   //state variables
-  const [walletAddress, setWallet] = useState("");
+  const [voteAddress, setVote] = useState("");
   const [status, setStatus] = useState("");
   const [message, setMessage] = useState("No connection to the network."); //default message
   const [newMessage, setNewMessage] = useState("");
 
   //called only once
   useEffect(async () => {
-    
+    const message = await loadCurrentMessage();
+    setMessage(message);
+    addSmartContractListener();
   }, []);
 
-  function addSmartContractListener() { //TODO: implement
-    
+  function addSmartContractListener() {
+    helloWorldContract.events.UpdatedMessages({}, (error, data) => {
+      if (error) { setStatus(error.message); }
+      else {
+        setMessage(data.returnValues[1]);
+        setNewMessage("");
+        setStatus("Message updated.");
+      }
+    });
   }
 
   function addWalletListener() { //TODO: implement
     
   }
 
-  const connectWalletPressed = async () => { //TODO: implement
-    
+  const connectVotingPressed = async () => { //TODO: implement
+    const votingResponse = await connectToEthChain();
+    setStatus(votingResponse.status);
+    setVote(votingResponse.address);
   };
 
   const onUpdatePressed = async () => { //TODO: implement
