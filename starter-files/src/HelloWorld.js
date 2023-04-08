@@ -2,37 +2,53 @@ import React from "react";
 import { useEffect, useState } from "react";
 import {
   helloWorldContract,
-  connectWallet,
+  connectToEthchain,
   updateMessage,
   loadCurrentMessage,
-  getCurrentWalletConnected,
+  getCurrentVoterConnected,
+  connectToEthChain,
+  getCurrentVoterConnected,
 } from "./util/interact.js";
 
-import logo from "./logo.svg";
-import kan from "./logo.png";
+import alchemylogo from "./alchemylogo.svg";
 
 const HelloWorld = () => {
   //state variables
-  const [walletAddress, setWallet] = useState("");
+  const [voteAddress, setVote] = useState("");
   const [status, setStatus] = useState("");
   const [message, setMessage] = useState("No connection to the network."); //default message
   const [newMessage, setNewMessage] = useState("");
 
   //called only once
   useEffect(async () => {
-    
+    const message = await loadCurrentMessage();
+    setMessage(message);
+    addSmartContractListener();
+
+    const { address, status } = await getCurrentVoterConnected();
+    setVote(address);
+    setStatus(status);
   }, []);
 
-  function addSmartContractListener() { //TODO: implement
-    
+  function addSmartContractListener() {
+    helloWorldContract.events.UpdatedMessages({}, (error, data) => {
+      if (error) { setStatus(error.message); }
+      else {
+        setMessage(data.returnValues[1]);
+        setNewMessage("");
+        setStatus("Message updated.");
+      }
+    });
   }
 
   function addWalletListener() { //TODO: implement
     
   }
 
-  const connectWalletPressed = async () => { //TODO: implement
-    
+  const connectVotingPressed = async () => { //TODO: implement
+    const votingResponse = await connectToEthChain();
+    setStatus(votingResponse.status);
+    setVote(votingResponse.address);
   };
 
   const onUpdatePressed = async () => { //TODO: implement
@@ -42,7 +58,7 @@ const HelloWorld = () => {
   //the UI of our component
   return (
     <div id="container">
-      <img id="logo" src={kan} alt="logo" ></img>
+      <img id="logo" src={alchemylogo}></img>
       <button id="walletButton" onClick={connectWalletPressed}>
         {walletAddress.length > 0 ? (
           "Connected: " +
@@ -50,7 +66,7 @@ const HelloWorld = () => {
           "..." +
           String(walletAddress).substring(38)
         ) : (
-          <span>Connect to Voting Adress</span>
+          <span>Connect Wallet</span>
         )}
       </button>
 
@@ -69,7 +85,7 @@ const HelloWorld = () => {
         <p id="status">{status}</p>
 
         <button id="publish" onClick={onUpdatePressed}>
-          Publish Message
+          Update
         </button>
       </div>
     </div>
