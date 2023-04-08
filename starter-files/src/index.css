@@ -75,8 +75,9 @@ button {
 #logo {
   float:left;
   display: flex;
-  
-  width: 150px;
+  margin-left: -10px;
+  margin-top: -16px;
+  width: 210px;
 }
 
 #walletButton {

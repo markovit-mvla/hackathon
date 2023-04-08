@@ -2,15 +2,13 @@ import React from "react";
 import { useEffect, useState } from "react";
 import {
   helloWorldContract,
-  connectToEthchain,
-  updateMessage,
   loadCurrentMessage,
   getCurrentVoterConnected,
   connectToEthChain,
-  getCurrentVoterConnected,
+  
 } from "./util/interact.js";
 
-import alchemylogo from "./alchemylogo.svg";
+
 
 const HelloWorld = () => {
   //state variables
