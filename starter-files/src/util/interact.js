@@ -58,7 +58,22 @@ export const validateVoter = async () => {
     scanButton.addEventListener('click', () => {
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        /* Process image */
+        <script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+        function onOpenCvReady() {
+            const src = cv.imread(canvas);
+            const gray = new cv.Mat();
+            cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY);
+            const imgData = new ImageData(new Uint8ClampedArray(gray.data), gray.cols, gray.rows);
+            const pixels = imgData.data;
+            const grayscalePixels = [];
+            for (let i = 0; i < pixels.length; i += 4) {
+                const r = pixels[i];
+                const g = pixels[i + 1];
+                const b = pixels[i + 2];
+                const grayscaleValue = (r + g + b) / 3;
+                grayscalePixels.push(grayscaleValue);
+            }
+        }
     });
 };
 
