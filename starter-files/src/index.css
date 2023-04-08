@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -51,15 +57,15 @@ input {
   font-weight: 600;
 }
 
-button {
+#publish {
   padding: 9px 16px;
   max-height: 40px;
   *box-shadow: 4px 4px 15px 0 rgb(0 0 0 / 20%);
-  border-color:  #254cdd ;
+  border-color:  #2550dd ;
   border: none;
   background: none;
   color:white;
-  background-color: #254cdd;
+  background-color: #253ddd;
   border-radius: 6px;
   align-items: center;
   font-size: 16px;
@@ -75,16 +81,19 @@ button {
 #logo {
   float:left;
   display: flex;
-  margin-left: -10px;
-  margin-top: -16px;
-  width: 210px;
+  margin-left: 5px;
+  margin-top:5px;
+  width: 150px;
 }
 
 #walletButton {
   padding: 7px 16px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
+  width: 160px;
+  height: 35;
   float:right;
-  border: 2px solid #254cdd ;
+  border: 2px solid #2550dd ;
+  border-radius: 6px;
   color:#254cdd;
   margin-top: 0px;
 
