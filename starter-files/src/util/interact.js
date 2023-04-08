@@ -65,14 +65,31 @@ export const validateVoter = async () => {
             cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY);
             const imgData = new ImageData(new Uint8ClampedArray(gray.data), gray.cols, gray.rows);
             const pixels = imgData.data;
-            const grayscalePixels = [];
-            for (let i = 0; i < pixels.length; i += 4) {
-                const r = pixels[i];
-                const g = pixels[i + 1];
-                const b = pixels[i + 2];
-                const grayscaleValue = (r + g + b) / 3;
-                grayscalePixels.push(grayscaleValue);
+            // const grayscalePixels = [];
+
+            const grayscalePixel2 = new Array(canvas.height);
+            for(let i = 0; i < grayscalePixel2.length; i++) {
+              grayscalePixel2[i] = new Array(canvas.width);
             }
+            for(let i = 0; i < canvas.height; i++) {
+              for(let j = 0; j < canvas.width; i++) {
+                let index = 4 *j + canvas.width * i;
+                const r = pixels[index];
+                const g = pixels[index + 1];
+                const b = pixels[index + 2];
+                const grayscaleValue = (r + g + b) / 3;
+                grayscalePixel2[i][j] = grayscaleValue;
+              }
+            }
+
+
+            // for (let i = 0; i < pixels.length; i += 4) {
+            //     const r = pixels[i];
+            //     const g = pixels[i + 1];
+            //     const b = pixels[i + 2];
+            //     const grayscaleValue = (r + g + b) / 3;
+            //     grayscalePixels.push(grayscaleValue);
+            // }
         }
     });
 };
