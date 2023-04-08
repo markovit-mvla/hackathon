@@ -2,11 +2,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import {
   helloWorldContract,
-  connectWallet,
+  connectToEthchain,
   updateMessage,
   loadCurrentMessage,
-  getCurrentWalletConnected,
+  getCurrentVoterConnected,
   connectToEthChain,
+  getCurrentVoterConnected,
 } from "./util/interact.js";
 
 import alchemylogo from "./alchemylogo.svg";
@@ -23,6 +24,10 @@ const HelloWorld = () => {
     const message = await loadCurrentMessage();
     setMessage(message);
     addSmartContractListener();
+
+    const { address, status } = await getCurrentVoterConnected();
+    setVote(address);
+    setStatus(status);
   }, []);
 
   function addSmartContractListener() {

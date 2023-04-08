@@ -30,7 +30,7 @@ export const connectToEthChain = async () => {
           } catch (err) {
             return {
               address: "",
-              status: "😥 " + err.message,
+              status: err.message,
             };
           }
         } else {
@@ -62,8 +62,35 @@ export const validateVoter = async () => {
     });
 };
 
-export const getCurrentWalletConnected = async () => {
-  
+export const getCurrentVoterConnected = async () => {
+    if (window.ethereum) {
+        try {
+          const addressArray = await window.ethereum.request({
+            method: "eth_accounts",
+          });
+          if (addressArray.length > 0) {
+            return {
+              address: addressArray[0],
+              status: "👆🏽 Write a message in the text-field above.",
+            };
+          } else {
+            return {
+              address: "",
+              status: "",
+            };
+          }
+        } catch (err) {
+          return {
+            address: "",
+            status: err.message,
+          };
+        }
+      } else {
+        return {
+          address: "",
+          status: "",
+        }
+      }
 };
 
 export const updateMessage = async (address, message) => {
