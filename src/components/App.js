@@ -9,12 +9,12 @@ class App extends Component {
       <div>
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
           <a
-            className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="http://www.dappuniversity.com/bootcamp"
+            className="navbar-brand col-sm-3 col-md-2 mr-0 text-white"
+            
             target="_blank"
             rel="noopener noreferrer"
           >
-            Blockchain Ballots
+            Home
           </a>
         </nav>
         <div className="container-fluid mt-5">
@@ -29,10 +29,10 @@ class App extends Component {
                   <img src={logo} className="App-logo" alt="logo" style={{ width: '50%', height: '50%' }} />
                 </a>
                 <h1>Los Altos Hacks Blockchain Ballots</h1>
-                <p>
+                <p class = "">
                   Revolutionize voting.
                 </p>
-                <button>Begin the voting process.</button>
+                <button id = "beg">Begin the voting process</button>
               </div>
             </main>
           </div>
