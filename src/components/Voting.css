@@ -72,9 +72,13 @@
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 6px;
-    top:50px;
+    top:60px;
     width:120px;
     height:45px;
     text-align: center;
     
+}
+
+#cand:hover,#cand2:hover,#test:hover,#test2:hover{
+    background-color: darkcyan;
 }
