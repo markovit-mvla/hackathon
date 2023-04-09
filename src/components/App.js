@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
 import './App.css';
-
+import Navbar from "./Navbar";
+import Home from "./Home";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Voting from './Voting';
 class App extends Component {
   onClick() {
     const video = document.querySelector('video');
@@ -62,36 +65,15 @@ class App extends Component {
     return (
       
       <div>
-        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-          <a
-            className="navbar-brand col-sm-3 col-md-2 mr-0 text-white"
-            
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Home
-          </a>
-        </nav>
-        <div className="container-fluid mt-5">
-          <div className="row">
-            <main role="main" className="col-lg-12 d-flex text-center">
-              <div className="content mr-auto ml-auto">
-                <a
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={logo} className="App-logo" alt="logo" style={{ width: '50%', height: '50%' }} />
-                </a>
-                <h1>Los Altos Hacks Blockchain Ballots</h1>
-                <p class = "">
-                  Revolutionize voting.
-                </p>
-                <button id = "beg">Begin the voting process</button>
-              </div>
-            </main>
-          </div>
-        </div>
+       
+       <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home  />} />
+          </Routes>
+         <Routes>
+          <Route path="/voting" element={<Voting/>}/>
+         </Routes>
+        </BrowserRouter>
       </div>
     );
   }

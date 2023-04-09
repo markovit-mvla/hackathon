@@ -1,0 +1,20 @@
+#nav{
+    height: 60px;
+    background-color: darkslategray;
+    position:relative;  
+}
+
+#but {
+    position:absolute;
+    border: none;
+    color:white;
+    background-color: transparent;
+   left:px;
+    width: 90px;
+    font-size: large;
+    height:60px;
+}
+
+#but:hover{
+    background-color: gray;
+}

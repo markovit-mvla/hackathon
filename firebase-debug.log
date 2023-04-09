@@ -1,0 +1,158 @@
+[debug] [2023-04-09T01:59:54.057Z] ----------------------------------------------------------------------
+[debug] [2023-04-09T01:59:54.059Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jack\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-04-09T01:59:54.059Z] CLI Version:   11.25.3
+[debug] [2023-04-09T01:59:54.060Z] Platform:      win32
+[debug] [2023-04-09T01:59:54.060Z] Node Version:  v18.15.0
+[debug] [2023-04-09T01:59:54.061Z] Time:          Sat Apr 08 2023 18:59:54 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-04-09T01:59:54.061Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-09T01:59:54.128Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-09T01:59:54.129Z] > authorizing via signed-in user (ilovethebeard13@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\jack\git\hackathon
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-04-09T02:00:07.927Z] Using project from CLI flag: hackathon-55c05
+[debug] [2023-04-09T02:00:07.930Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/hackathon-55c05 [none]
+[debug] [2023-04-09T02:00:08.248Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/hackathon-55c05 200
+[debug] [2023-04-09T02:00:08.248Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/hackathon-55c05 {"projectId":"hackathon-55c05","projectNumber":"794775581314","displayName":"hackathon","name":"projects/hackathon-55c05","resources":{"hostingSite":"hackathon-55c05"},"state":"ACTIVE","etag":"1_346c8d1d-e4f5-4a14-a565-781357ab2cb9"}
+[info] i  Using project hackathon-55c05 (hackathon) 
+[info] 
+=== Hosting:github Setup
+[info] 
+[info] i  Detected a .git folder at C:\Users\jack\git\hackathon 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=726030873&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2023-04-09T02:00:08.785Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2023-04-09T02:00:08.785Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2023-04-09T02:00:09.128Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2023-04-09T02:00:09.128Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2023-04-09T02:00:09.138Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2023-04-09T02:00:09.562Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2023-04-09T02:00:09.562Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"fuj-mvla","id":111082565,"node_id":"U_kgDOBp78RQ","avatar_url":"https://avatars.githubusercontent.com/u/111082565?v=4","gravatar_id":"","url":"https://api.github.com/users/fuj-mvla","html_url":"https://github.com/fuj-mvla","followers_url":"https://api.github.com/users/fuj-mvla/followers","following_url":"https://api.github.com/users/fuj-mvla/following{/other_user}","gists_url":"https://api.github.com/users/fuj-mvla/gists{/gist_id}","starred_url":"https://api.github.com/users/fuj-mvla/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/fuj-mvla/subscriptions","organizations_url":"https://api.github.com/users/fuj-mvla/orgs","repos_url":"https://api.github.com/users/fuj-mvla/repos","events_url":"https://api.github.com/users/fuj-mvla/events{/privacy}","received_events_url":"https://api.github.com/users/fuj-mvla/received_events","type":"User","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":2,"public_gists":0,"followers":0,"following":0,"created_at":"2022-08-11T18:20:11Z","updated_at":"2023-04-09T01:48:29Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":1154,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as fuj-mvla 
+[info] 
+[debug] [2023-04-09T02:00:23.025Z] ----------------------------------------------------------------------
+[debug] [2023-04-09T02:00:23.026Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jack\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-04-09T02:00:23.027Z] CLI Version:   11.25.3
+[debug] [2023-04-09T02:00:23.027Z] Platform:      win32
+[debug] [2023-04-09T02:00:23.027Z] Node Version:  v18.15.0
+[debug] [2023-04-09T02:00:23.028Z] Time:          Sat Apr 08 2023 19:00:23 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-04-09T02:00:23.028Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-09T02:00:23.097Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-09T02:00:23.097Z] > authorizing via signed-in user (ilovethebeard13@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\jack\git\hackathon
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-04-09T02:01:05.953Z] Using project from CLI flag: hackathon-55c05
+[debug] [2023-04-09T02:01:05.955Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/hackathon-55c05 [none]
+[debug] [2023-04-09T02:01:06.249Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/hackathon-55c05 200
+[debug] [2023-04-09T02:01:06.249Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/hackathon-55c05 {"projectId":"hackathon-55c05","projectNumber":"794775581314","displayName":"hackathon","name":"projects/hackathon-55c05","resources":{"hostingSite":"hackathon-55c05"},"state":"ACTIVE","etag":"1_346c8d1d-e4f5-4a14-a565-781357ab2cb9"}
+[info] i  Using project hackathon-55c05 (hackathon) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2023-04-09T02:01:51.753Z] ----------------------------------------------------------------------
+[debug] [2023-04-09T02:01:51.755Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jack\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-04-09T02:01:51.756Z] CLI Version:   11.25.3
+[debug] [2023-04-09T02:01:51.756Z] Platform:      win32
+[debug] [2023-04-09T02:01:51.756Z] Node Version:  v18.15.0
+[debug] [2023-04-09T02:01:51.757Z] Time:          Sat Apr 08 2023 19:01:51 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-04-09T02:01:51.757Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-09T02:01:51.825Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-09T02:01:51.826Z] > authorizing via signed-in user (ilovethebeard13@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\jack\git\hackathon
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-04-09T02:01:56.058Z] Using project from CLI flag: hackathon-55c05
+[debug] [2023-04-09T02:01:56.061Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/hackathon-55c05 [none]
+[debug] [2023-04-09T02:01:56.532Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/hackathon-55c05 200
+[debug] [2023-04-09T02:01:56.532Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/hackathon-55c05 {"projectId":"hackathon-55c05","projectNumber":"794775581314","displayName":"hackathon","name":"projects/hackathon-55c05","resources":{"hostingSite":"hackathon-55c05"},"state":"ACTIVE","etag":"1_346c8d1d-e4f5-4a14-a565-781357ab2cb9"}
+[info] i  Using project hackathon-55c05 (hackathon) 
+[info] 
+=== Hosting:github Setup
+[info] 
+[info] i  Detected a .git folder at C:\Users\jack\git\hackathon 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=644800139&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2023-04-09T02:01:57.033Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2023-04-09T02:01:57.033Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2023-04-09T02:01:57.368Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2023-04-09T02:01:57.368Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2023-04-09T02:01:57.382Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2023-04-09T02:01:57.732Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2023-04-09T02:01:57.732Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"fuj-mvla","id":111082565,"node_id":"U_kgDOBp78RQ","avatar_url":"https://avatars.githubusercontent.com/u/111082565?v=4","gravatar_id":"","url":"https://api.github.com/users/fuj-mvla","html_url":"https://github.com/fuj-mvla","followers_url":"https://api.github.com/users/fuj-mvla/followers","following_url":"https://api.github.com/users/fuj-mvla/following{/other_user}","gists_url":"https://api.github.com/users/fuj-mvla/gists{/gist_id}","starred_url":"https://api.github.com/users/fuj-mvla/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/fuj-mvla/subscriptions","organizations_url":"https://api.github.com/users/fuj-mvla/orgs","repos_url":"https://api.github.com/users/fuj-mvla/repos","events_url":"https://api.github.com/users/fuj-mvla/events{/privacy}","received_events_url":"https://api.github.com/users/fuj-mvla/received_events","type":"User","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":2,"public_gists":0,"followers":0,"following":0,"created_at":"2022-08-11T18:20:11Z","updated_at":"2023-04-09T01:48:29Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":1154,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as fuj-mvla 
+[info] 
