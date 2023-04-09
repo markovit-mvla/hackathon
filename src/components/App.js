@@ -6,7 +6,8 @@ import Home from "./Home";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Voting from './Voting';
 class App extends Component {
- 
+
+  
         /*
     const canvas = document.querySelector('canvas');
     const ctx = canvas.getContext('2d');
