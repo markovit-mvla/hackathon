@@ -88,13 +88,6 @@ class App extends Component {
                   Revolutionize voting.
                 </p>
                 <button id = "beg">Begin the voting process</button>
-                <script>
-                  function handleClick() {
-                    this.onClick()
-                  }
-                  document.getElementById("voteBegin").addEventListener("click", handleClick);
-                </script>
-                <p>This is a test</p>
               </div>
             </main>
           </div>
@@ -103,5 +96,15 @@ class App extends Component {
     );
   }
 }
+
+/*
+This goes between button id and </div>
+                  <script>
+                  function handleClick() {
+                    this.onClick()
+                  }
+                  document.getElementById("voteBegin").addEventListener("click", handleClick);
+                </script>       
+*/
 
 export default App;
