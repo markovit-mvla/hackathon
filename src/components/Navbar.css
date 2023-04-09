@@ -9,11 +9,11 @@
     border: none;
     color:white;
     background-color: transparent;
-   left:px;
+   left: 60px;
     width: 90px;
     font-size: large;
     height:60px;
-    
+    outline: none;
 }
 
 #but:hover{
@@ -26,12 +26,16 @@
     border: none;
     color:white;
     background-color: transparent;
-   left:90px;
+   left:150px; /* 90*/
     width: 90px;
     font-size: large;
     height:60px;
-   
+    outline: none;
 }
 #but2:hover{
     background-color: gray;
+}
+
+#im{
+    height:60px;
 }
