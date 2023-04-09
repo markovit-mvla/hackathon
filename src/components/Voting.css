@@ -60,7 +60,7 @@
     font-weight:bold;
 }
 
-#cand,#cand2{
+#cand1,#cand2{
     position:relative;
     background-color: darkblue;
     border:none;
@@ -73,12 +73,29 @@
     margin: 4px 2px;
     border-radius: 6px;
     top:60px;
-    width:120px;
+    width:200px;
     height:45px;
     text-align: center;
+
     
 }
 
-#cand:hover,#cand2:hover,#test:hover,#test2:hover{
+#cand1:hover,#cand2:hover,#test:hover,#test2:hover{
     background-color: darkcyan;
+}
+
+.container{
+    position:relative;
+
+}
+
+#h3,#h2{
+    position:relative;
+    top:60px;
+    color:darkcyan;
+    padding-top:25px;
+}
+
+#h3{
+    padding-bottom:20px;
 }

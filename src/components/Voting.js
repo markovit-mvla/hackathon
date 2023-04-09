@@ -9808,14 +9808,15 @@ fetch('path/to/your/file.json')
     contractABI = data;
   })
   .catch(error => console.error(error));*/
-const contractBytecode = '0xd9145CCE52D386f254917e481eB44e9943F39138';
+const contractBytecode = '0x5B38Da6a701c568545dCfcB03FcB875f56beddC4';
 const contract = new web3.eth.Contract(contractABI, contractBytecode);
 
 const Voting = () => {
   const [cam, setCam] = useState(false);
   const [check, setCheck] = useState(false);
   const [cand, setCand] = useState(false);
-  const[camera,setCamera] = useState('false');
+  const[camera,setCamera] = useState(false);
+  const[cam2,setCam2] = useState(true);
   const [candidate1Votes, setCandidate1Votes] = useState(0);
   const [candidate2Votes, setCandidate2Votes] = useState(0);
 
@@ -9835,11 +9836,12 @@ const Voting = () => {
   };
 
   const openCamera = () => {
-    setCamera(false);
+    setCamera(true);
     setCam(true);
   };
 
   const closeCamera = () => {
+    setCam2(false);
     setCam(false);
     setCheck(true);
     setCand(true);
@@ -9857,8 +9859,8 @@ const Voting = () => {
     <div id="cont">
       <Navbar navigate={navigateHome} navigateV={navigateVoting} />
       <h1 id="h1">Verify your Citizenship</h1>
-      {camera==="false" &&<button id="test" onClick={openCamera}>Open Camera</button>}
-      {camera==="true"&&<button id="test2" onClick={closeCamera}>Close Camera</button>}
+      {!camera &&<button id="test" onClick={openCamera}>Open Camera</button>}
+      {camera&&cam2 && <button id="test2" onClick={closeCamera}>Close Camera</button>}
       <div className="App">
         {cam && (
           <Webcam
@@ -9873,11 +9875,11 @@ const Voting = () => {
       {check && <div id="id">Verified!</div>}
       {!check && <div id="id2">Not Verified. Please turn your camera on</div>}
       {cand && (
-        <div>
+        <div className="container">
           <button id="cand1" onClick={() => voteForCandidate('candidate1')}>Vote for Candidate 1</button>
-          <h2>Candidate 1: {candidate1Votes} votes</h2>
+          <h2 id="h3">Candidate 1: {candidate1Votes} votes</h2>
           <button id="cand2" onClick={() => voteForCandidate('candidate2')}>Vote for Candidate 2</button>
-          <h2>Candidate 2: {candidate2Votes} votes</h2>
+          <h2 id="h2">Candidate 2: {candidate2Votes} votes</h2>
         </div>
       )}
     </div>
