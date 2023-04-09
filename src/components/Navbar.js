@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./Navbar.css";
 import {useNavigate} from 'react-router-dom';
-const Navbar = ({navigate}) =>{
+const Navbar = ({navigate,navigateV}) =>{
 
     
     
@@ -13,6 +13,7 @@ const Navbar = ({navigate}) =>{
       >
         Home
       </button>
+      <button id = "but2" onClick={navigateV}>Vote</button>
       </nav>
       </div>
     );

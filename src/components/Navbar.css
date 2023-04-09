@@ -13,8 +13,25 @@
     width: 90px;
     font-size: large;
     height:60px;
+    
 }
 
 #but:hover{
+    background-color: gray;
+}
+
+#but2{
+   
+    position:absolute;
+    border: none;
+    color:white;
+    background-color: transparent;
+   left:90px;
+    width: 90px;
+    font-size: large;
+    height:60px;
+   
+}
+#but2:hover{
     background-color: gray;
 }

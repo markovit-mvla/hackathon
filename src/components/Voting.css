@@ -78,3 +78,7 @@
     text-align: center;
     
 }
+
+#cand:hover,#cand2:hover,#test:hover,#test2:hover{
+    background-color: darkcyan;
+}

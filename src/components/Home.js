@@ -14,7 +14,7 @@ const Home =()=>{
     }
     return(
         <div>
-        <Navbar navigate = {navigateHome}/>
+        <Navbar navigate = {navigateHome} navigateV = {navigateVoting}/>
         <div id ="container" className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
