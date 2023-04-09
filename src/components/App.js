@@ -6,21 +6,7 @@ import Home from "./Home";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Voting from './Voting';
 class App extends Component {
-  onClick() {
-    const video = document.querySelector('video');
-    const constraints = { video: true };
-    navigator.mediaDevices.getUserMedia(constraints)
-        .then(stream => {
-            video.srcObject = stream;
-            video.play();
-            setTimeout(() => {
-              video.pause();
-              video.srcObject = null;
-            }, 100);
-        })
-        .catch(err => {
-            console.error('Error accessing camera:', err);
-        });
+ 
         /*
     const canvas = document.querySelector('canvas');
     const ctx = canvas.getContext('2d');
@@ -64,7 +50,7 @@ class App extends Component {
           
         }
     });*/
-  }
+  
   
   render() {
     return (

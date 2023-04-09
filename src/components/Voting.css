@@ -1,8 +1,49 @@
-
-
-#test{
+#cont{
     position:relative;
     text-align: center;
-    color:rebeccapurple;
-    top:10px;
+    
 }
+
+#test,#test2{
+    position:relative;
+    background-color: darkblue;
+    border:none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    top:20px;
+    
+    
+}
+
+.App{
+    position:relative;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  left:35%;
+  top:40px;
+  border:2px solid darkslateblue;
+  height:254px;
+  width:452px;
+  
+  
+}
+
+#h1{
+    padding-top: 20px;
+    color:darkcyan;
+}
+
+#id,#id2{
+    position:relative;
+    top:50px;
+    font-weight:bold;
+}
+
