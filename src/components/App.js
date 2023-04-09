@@ -33,7 +33,7 @@ class App extends Component {
                   Revolutionize voting.
                 </p>
                 <button id = "beg">Begin the voting process</button>
-                <p>tetgegtfwgfwgeytfgwteygfy</p>
+                <p>This is a test</p>
               </div>
             </main>
           </div>
