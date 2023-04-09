@@ -9808,7 +9808,7 @@ fetch('path/to/your/file.json')
     contractABI = data;
   })
   .catch(error => console.error(error));*/
-const contractBytecode = '0x5B38Da6a701c568545dCfcB03FcB875f56beddC4';
+const contractBytecode = '0xd9145CCE52D386f254917e481eB44e9943F39138';
 const contract = new web3.eth.Contract(contractABI, contractBytecode);
 
 const Voting = () => {
