@@ -9815,6 +9815,7 @@ const Voting = () => {
   const [cam, setCam] = useState(false);
   const [check, setCheck] = useState(false);
   const [cand, setCand] = useState(false);
+  const[camera,setCamera] = useState('false');
   const [candidate1Votes, setCandidate1Votes] = useState(0);
   const [candidate2Votes, setCandidate2Votes] = useState(0);
 
@@ -9834,6 +9835,7 @@ const Voting = () => {
   };
 
   const openCamera = () => {
+    setCamera(false);
     setCam(true);
   };
 
@@ -9842,7 +9844,9 @@ const Voting = () => {
     setCheck(true);
     setCand(true);
   };
-
+  const navigateVoting=()=>{
+    navigate("/voting");
+}
   const videoConstraints = {
     width: 1280,
     height: 720,
@@ -9851,10 +9855,10 @@ const Voting = () => {
 
   return (
     <div id="cont">
-      <Navbar navigate={navigateHome} />
+      <Navbar navigate={navigateHome} navigateV={navigateVoting} />
       <h1 id="h1">Verify your Citizenship</h1>
-      <button id="test" onClick={openCamera}>Open Camera</button>
-      <button id="test2" onClick={closeCamera}>Close Camera</button>
+      {camera==="false" &&<button id="test" onClick={openCamera}>Open Camera</button>}
+      {camera==="true"&&<button id="test2" onClick={closeCamera}>Close Camera</button>}
       <div className="App">
         {cam && (
           <Webcam

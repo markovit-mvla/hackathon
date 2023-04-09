@@ -24,7 +24,7 @@ const Home =()=>{
     
                 <h1>Los Altos Hacks Blockchain Ballots</h1>
                 <p className = "">
-                  Revolutionize voting.
+                  Revolutionize voting
                 </p>
                 <button id = "beg" onClick={navigateVoting}>Begin the voting process</button>
               </div>
