@@ -32,6 +32,7 @@ class App extends Component {
                 <p>
                   Revolutionize voting.
                 </p>
+                <button>Begin the voting process.</button>
               </div>
             </main>
           </div>
