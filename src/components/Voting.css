@@ -4,7 +4,7 @@
     
 }
 
-#test,#test2{
+#test{
     position:relative;
     background-color: darkblue;
     border:none;
@@ -20,7 +20,20 @@
     
     
 }
-
+#test2{
+    position:relative;
+    background-color: darkblue;
+    border:none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    
+    
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    top:20px;
+}
 .App{
     position:relative;
     display: flex;
@@ -47,3 +60,21 @@
     font-weight:bold;
 }
 
+#cand,#cand2{
+    position:relative;
+    background-color: darkblue;
+    border:none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    top:50px;
+    width:120px;
+    height:45px;
+    text-align: center;
+    
+}

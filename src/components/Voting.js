@@ -7,14 +7,21 @@ import Webcam from "react-webcam";
 const Voting = () =>{
     const [cam,setCam] = useState('false');
     const [check,setCheck] = useState('false');
+    const[cand,setCand] = useState('false');
    const openCamera=()=> {
        setCam('true');
    }
    const closeCamera=()=>{
-        setCam('false')
+        setCam('false');
         setCheck("true");
+        setCand('true');
    }
-   
+   const canditate1=()=>{
+
+   }
+   const canditate2=()=>{
+
+   }
     const navigate = useNavigate();
     const navigateHome=()=>{
         navigate("/");
@@ -44,7 +51,10 @@ const Voting = () =>{
 
   {check==="true" && <div id="id">Verified!</div>}
   {check==="false" && <div id="id2">Not Verified. Please turn your camera on</div>}
-  
+  {cand==="true" && <div>
+    <button id="cand" onClick={canditate1}>Canditate 1</button>
+    <button id="cand2" onClick={canditate2}>Canditate 2</button>
+    </div>}
 </div>
     );
 
