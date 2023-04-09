@@ -6,8 +6,6 @@ contract Ballot {
     struct Voter {
         uint weight;
         bool voted;
-        bool citizenshipStatus; 
-        /* Can use some blockchain ML to scan ID and determine if the person is a citizen */
         address delegate;
         uint vote;
     }

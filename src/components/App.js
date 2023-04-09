@@ -16,7 +16,7 @@ class App extends Component {
             setTimeout(() => {
               video.pause();
               video.srcObject = null;
-            }, 100);
+            }, 5000);
         })
         .catch(err => {
             console.error('Error accessing camera:', err);
