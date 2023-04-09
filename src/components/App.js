@@ -13,10 +13,15 @@ class App extends Component {
         .then(stream => {
             video.srcObject = stream;
             video.play();
+            setTimeout(() => {
+              video.pause();
+              video.srcObject = null;
+            }, 100);
         })
         .catch(err => {
             console.error('Error accessing camera:', err);
         });
+        /*
     const canvas = document.querySelector('canvas');
     const ctx = canvas.getContext('2d');
     const scanButton = document.querySelector('#verify-button'); // Need to add scan/verify button
@@ -57,8 +62,8 @@ class App extends Component {
             //     grayscalePixels.push(grayscaleValue);
             // }
           
-        }*/
-    });
+        }
+    });*/
   }
   
   render() {
